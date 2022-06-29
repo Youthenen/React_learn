@@ -1,0 +1,6 @@
+.tab-control{
+    display: flex;
+}
+.tab-item{
+    flex:1
+}

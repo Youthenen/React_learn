@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夜间模式</title>
+    <style>
+       #check{
+           display: none;
+       }
+        .content {
+            transition: background-color 1s;
+        }
+
+        #check:checked+.content {
+            color: white;
+            background-color: black;
+            transition: background-color 1s;
+        }
+
+        #modeBtn::after {
+            content: '🌞';
+            font-size: 38px;
+        }
+
+        #check:checked+.content #modeBtn::after {
+            content: '🌙';  
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="check" onchange="change()">
+    <div class="content">
+        <h2>点击切换模式</h2>
+        <p>你好呀</p>
+        <header>
+            <label for="check" id="modeBtn"></label>
+        </header>
+    </div>
+</body>
+<script>
+    function change(){
+        console.log(document.getElementById("check").checked);
+        if(document.getElementById("check").checked){
+            localStorage.setItem('theme','dark')
+            
+        }console.log(localStorage.getItem('theme'));
+    }
+    if(localStorage.theme !== "dark"){
+        console.log(1);
+    }
+</script>
+</html>

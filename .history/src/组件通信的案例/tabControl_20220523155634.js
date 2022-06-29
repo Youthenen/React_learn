@@ -1,0 +1,18 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+export default function TabControl(props) {
+  const {titles}= props
+  return (
+    <div>
+
+            {
+                titles.map((item)=>{
+                    return <div key={item}>{item}</div>
+                })
+            }
+    </div>
+  )
+}
+TabControl.prototype = {
+    titles:PropTypes.array.isRequired
+}

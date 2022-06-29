@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夜间模式</title>
+    <style>
+       #check{
+           display: none;
+       }
+        .content {
+            transition: background-color 1s;
+        }
+
+        #check:checked+.content {
+            color: white;
+            background-color: black;
+            transition: background-color 1s;
+        }
+
+        #modeBtn::after {
+            content: '🌞';
+        }
+
+        #check:checked+.content #modeBtn::after {
+            content: '🌙';  
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="check">
+    <div class="content">
+        <h2>点击切换模式</h2>
+        <p>你好呀</p>
+        <header>
+            <label for="check" id="modeBtn"></label>
+        </header>
+    </div>
+</body>
+<script>
+    console.log(); document.getElementById("check")
+</script>
+</html>
